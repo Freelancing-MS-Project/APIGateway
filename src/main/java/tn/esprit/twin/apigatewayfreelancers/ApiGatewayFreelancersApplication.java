@@ -21,9 +21,9 @@ public class ApiGatewayFreelancersApplication {
         return builder.routes()
         .route(
                 "mission",r->r.path("/freelancerProject/mission/**").uri("lb://freelancerProject") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
-        ).build()
+        )
         .route(
-                "reviews",r->r.path("/review/**").uri("lb://ReviewRating")
+                "reviews",r->r.path("/api/reviews/**").uri("lb://Review_Rating")
         ).build();
     }
 }
