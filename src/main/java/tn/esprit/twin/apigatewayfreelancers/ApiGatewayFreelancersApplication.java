@@ -18,8 +18,12 @@ public class ApiGatewayFreelancersApplication {
 
     @Bean
     public RouteLocator getRoutes(RouteLocatorBuilder builder){
-        return builder.routes().route(
+        return builder.routes()
+        .route(
                 "mission",r->r.path("/freelancerProject/mission/**").uri("lb://freelancerProject") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+        ).build()
+        .route(
+                "reviews",r->r.path("/review/**").uri("lb://ReviewRating")
         ).build();
     }
 }
