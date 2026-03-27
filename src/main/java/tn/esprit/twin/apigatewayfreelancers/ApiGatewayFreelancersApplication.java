@@ -33,6 +33,10 @@ public class ApiGatewayFreelancersApplication {
                 )
                 .route(
 
+                        "api/users",r->r.path("/ProjetMicroUseryahya/api/users/**").uri("lb://ProjetMicroUseryahya") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+                )
+                .route(
+
                         "profiles",r->r.path("/profiles/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
