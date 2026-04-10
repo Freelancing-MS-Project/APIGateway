@@ -41,13 +41,10 @@ public class ApiGatewayFreelancersApplication {
                 )
                 .route(
 
-                        "profiles",r->r.path("/profiles/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+                        "/portfolio",r->r.path("/portfolio/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
-                        "profiles/me/portfolio",r->r.path("/profiles/me/portfolio/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
-                ).route(
-
-                        "skills",r->r.path("/skills/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+                        "/profiles/me/portfolio",r->r.path("/profiles/me/portfolio/**").uri("lb://freelancer-profile-service") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route("nestjs-service", r -> r
                         .path("/nestjs/**")
                         .filters(f -> f
