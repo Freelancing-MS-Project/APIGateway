@@ -21,13 +21,13 @@ public class ApiGatewayFreelancersApplication {
         return builder.routes().route(
                         //id mission c le nom de la route sur le controller de mission
                         "mission",r->r.path("/freelancerProject/mission/**")
-                                .filters(f -> f.tokenRelay()) // ← AJOUTE CECI
+                                 // ← AJOUTE CECI
                                 .uri("lb://freelancerProject") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
                         "reviews",r->r.path("/reviews/**")
-                                .filters(f -> f.tokenRelay()) // ← AJOUTE CECI
-                                .uri("lb://ReviewRating") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+                                 // ← AJOUTE CECI
+                                .uri("lb://REVIEWRATING") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
                         "api/contracts",r->r.path("/api/contracts/**").uri("lb://Contract") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties

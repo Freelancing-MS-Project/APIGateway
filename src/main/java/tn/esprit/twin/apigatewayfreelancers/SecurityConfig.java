@@ -20,4 +20,13 @@ public class SecurityConfig {
                         .jwt(Customizer.withDefaults()))
                 .build();
     }
+//@Bean
+//public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity serverHttpSecurity) {
+//    return serverHttpSecurity
+//            .csrf(csrf -> csrf.disable())
+//            .authorizeExchange(exchange -> exchange
+//                    .anyExchange().permitAll()  // ← Autorise tout pour tester
+//            )
+//            .build();
+//}
 }
