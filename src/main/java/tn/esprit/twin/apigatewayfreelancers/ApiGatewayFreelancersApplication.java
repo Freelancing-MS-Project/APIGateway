@@ -30,6 +30,11 @@ public class ApiGatewayFreelancersApplication {
                                 .uri("lb://REVIEWRATING") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
+                        "/api/notifications",r->r.path("/api/notifications/**")
+                                // ← AJOUTE CECI
+                                .uri("lb://Notification") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
+                ).route(
+
                         "api/contracts",r->r.path("/api/contracts/**").uri("lb://Contract") //lb: load balance //lb://freelancerProject : le nom de l'application mission nour njibha men application.properties
                 ).route(
 
